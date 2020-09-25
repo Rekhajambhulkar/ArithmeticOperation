@@ -16,7 +16,6 @@ read num3
 echo $num1 $num2 $num3
 
 resDict[k1]= `awk 'BEGIN{printf("%0.2f", '$num1' + '$num2' * '$num3' )}'`;
-resDict[k2]= `awk 'BEGIN{printf("%0.2f", '$num1' * '$num2' + '$num3' )}'`;
 
-echo "res is:" ${!resDict[@]}
+
 echo "computation result is:" ${resDict[@]}
