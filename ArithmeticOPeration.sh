@@ -1,6 +1,6 @@
 #! /bin/bash -x
 
-declare -A resDict
+declare -A Dict
 declare -a Array
 
 echo "Welcome in ArithmeticOperation"
@@ -15,13 +15,17 @@ read num3
 
 echo $num1 $num2 $num3
 
-resDict["k1"]= `awk 'BEGIN{printf("%0.2f", '$num1' + '$num2' * '$num3' )}'`;
-resDict["k2"]= `awk 'BEGIN{printf("%0.2f", '$num1' * '$num2' + '$num3' )}'`;
-resDict["k3"]= `awk 'BEGIN{printf("%0.2f", '$num1' + '$num2' / '$num3' )}'`;
-resDict["k4"]= `awk 'BEGIN{printf("%0.2f", '$num1' % '$num2' + '$num3' )}'`;
+Dict[k1] = `awk 'BEGIN{printf("%0.2f", '$num1' + '$num2' * '$num3' )}'`;
+Dict[k2] = `awk 'BEGIN{printf("%0.2f", '$num1' * '$num2' + '$num3' )}'`;
+Dict[k3] = `awk 'BEGIN{printf("%0.2f", '$num1' + '$num2' / '$num3' )}'`;
+Dict[k4] = `awk 'BEGIN{printf("%0.2f", '$num1' % '$num2' + '$num3' )}'`;
 
-echo "result is:" ${resDict[@]}
+echo "result is:" ${Dict[@]}
 
-echo "keys" ${resDict[@]}
 
-Array=${resDict[@]}
+Array=${Dict[@]}
+
+DescendingRes=$(for i in ${Array[@]};do echo $i;done | sort -nr);
+echo "res in descending order:" $DescendingRes
+
+
