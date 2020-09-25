@@ -23,3 +23,5 @@ resDict["k4"]= `awk 'BEGIN{printf("%0.2f", '$num1' % '$num2' + '$num3' )}'`;
 echo "result is:" ${resDict[@]}
 
 echo "keys" ${resDict[@]}
+
+Array=${resDict[@]}
