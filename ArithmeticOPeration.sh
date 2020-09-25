@@ -1,5 +1,7 @@
 #! /bin/bash -x
 
+declare -A resDict
+declare -a Array
 
 echo "Welcome in ArithmeticOperation"
 
@@ -12,3 +14,7 @@ echo "Enter 3rd no:"
 read num3
 
 echo $num1 $num2 $num3
+
+resDict["k1"]= `awk 'BEGIN{printf("%0.2f", '$num1' + '$num2' * '$num3' )}'`;
+
+echo "res is:" ${#res[@]}
