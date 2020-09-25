@@ -28,4 +28,5 @@ Array=${Dict[@]}
 DescendingRes=$(for i in ${Array[@]};do echo $i;done | sort -nr);
 echo "res in descending order:" $DescendingRes
 
-
+AscendingRes=$(for i in ${Array[@]};do echo $i;done | sort -n);
+echo "Res in Ascending oder:" $AscendingRes
